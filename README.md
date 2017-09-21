@@ -34,14 +34,14 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
    Copy <MODEL_NM> field and rename the htdocs/HE_DTV_W16K_AFADATAA file with the field you copied
 5. Optional(already done)
    Next we need to edit the file htdocs/"<MODEL_NM> field" from step 4
-   ```
-   <IMAGE_SIZE> - should match the exact file size of the firmware. You can find it by right-clicking the firmware file and choosing      Properties. Copy the bytes value like in this picture:Remove the spaces after pasting it into <IMAGE_SIZE>
-   <IMAGE_NAME> should be the exact name of your firmware file.
-   <UPDATE_MAJOR_VER> should match the two first digits of the firmware version you're downgrading to, 04 in my case.
-   <UPDATE_MINOR_VER> should match the last 4 digits of the firmware version, plus the dot inbetween, 31.05 in my case.
-    <GMT> I entered the date the firmware file was created, you can find that in the properties of the firmware file as well. In my case it was 11 May 2017 02:44:26 GMT
-  <CDN_URL> you need to add the filename of your firmware after "http://snu.lge.com:80/". In my case it was http://snu.lge.com:80/starfish-atsc-secured-k2l-20.deua.k2l-2030-04.31.20-prodkey_usb_V3_SECURED.epk
-  ```
+   
+   * <IMAGE_SIZE> - should match the exact file size of the firmware. You can find it by right-clicking the firmware file and choosing      Properties. Copy the bytes value like in this picture:Remove the spaces after pasting it into <IMAGE_SIZE>
+   * <IMAGE_NAME> should be the exact name of your firmware file.
+   * <UPDATE_MAJOR_VER> should match the two first digits of the firmware version you're downgrading to, 04 in my case.
+   * <UPDATE_MINOR_VER> should match the last 4 digits of the firmware version, plus the dot inbetween, 31.05 in my case.
+   * <GMT> I entered the date the firmware file was created, you can find that in the properties of the firmware file as well. In my case it was 11 May 2017 02:44:26 GMT
+   * <CDN_URL> you need to add the filename of your firmware after "http://snu.lge.com:80/". In my case it was "http://snu.lge.com:80/starfish-atsc-secured-k2l-20.deua.k2l-2030-04.31.20-prodkey_usb_V3_SECURED.epk"
+  
 6. Go to "C:\LgDTVUpDater" and double click on "start.bat"
 
 7. Answer N to the first question and press Enter.
