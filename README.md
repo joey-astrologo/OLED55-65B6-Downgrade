@@ -61,7 +61,7 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
 I recommend resetting the TV to Initial Settings after downgrading, to be sure it works as intended.
 
 # Credits
-Deepo from neogaf forums
-dkwong from AVSforum
-All the users in AVSforum c6 b6 owners thread
-Who ever made the LGDTVUpdater
+* Deepo from neogaf forums
+* dkwong from AVSforum
+* All the users in AVSforum c6 b6 owners thread
+* Who ever made the LGDTVUpdater
