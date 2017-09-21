@@ -22,7 +22,7 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
    Gateway   : 192.168.50.1
    DNS SERVER: 192.168.50.??? where ??? is the ip address you entered in step 1
    ```
-# The following steps are optional if you just want to downgrade to the included 4.31.20 firmware with a North American B6.  
+**The following steps are optional if you just want to downgrade to the included 4.31.20 firmware with a North American B6.**
    
 3. Optional(already done) 
    Copy the firmware to "C:\LgDTVUpDater\htdocs"
