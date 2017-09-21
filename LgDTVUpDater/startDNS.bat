@@ -1,0 +1,2 @@
+cd dns
+AcrylicConsole.exe

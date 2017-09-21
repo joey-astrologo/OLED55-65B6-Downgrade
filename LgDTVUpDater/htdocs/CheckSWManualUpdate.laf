@@ -1,0 +1,41 @@
+<?php
+$in_data = base64_decode($HTTP_RAW_POST_DATA);
+
+// decoded write request to a file
+$fd = fopen("in_dump.txt", "w");
+fwrite($fd, $in_data);
+fclose($fd);
+
+// parse xml request
+$p = xml_parser_create();
+xml_parse_into_struct($p, $in_data, $vals, $index);
+xml_parser_free($p);
+
+$model = $vals[3]['value'];
+
+// if (file_exists($model))
+
+if (is_file($model))
+
+// We check the model
+{
+	// open the answer file for the model
+	$out_data = file_get_contents($model);
+}
+else
+{
+	$out_data = file_get_contents("EMPTY");
+}
+
+// if there is a matter of data, encode and send
+if ($out_data)
+{
+	//echo "read $out_data";
+	$out_data_enc = base64_encode($out_data);
+	$out_data_enc_len = strlen($out_data_enc);
+	
+	header("Content-type: application/octet-stream;charset=UTF-8");
+	header("Content-length: $out_data_enc_len");
+	echo $out_data_enc;
+}
+?>

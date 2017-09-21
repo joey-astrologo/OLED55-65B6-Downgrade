@@ -1,0 +1,9 @@
+<?php
+$in_data = base64_decode($HTTP_RAW_POST_DATA);
+
+// decoded write request to a file
+$fd = fopen("in_log_end.txt", "w");
+fwrite($fd, $in_data);
+fclose($fd);
+
+?>

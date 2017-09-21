@@ -1,0 +1,93 @@
+This version of Dual Server support replication.
+
+FEATURES
+
+1.	It supports Full Zone Transfer AXFR only, it does not support IXFR (incremental Zone Transfer)
+2.	When Secondary Dual Server starts, it pulls RRs from Primary Server (see below).
+3.	It do not send Notify message.
+4.	It supports DHCP Database replication using special DHCP INFORM message.
+5.	One Dual Server can be in Linux while other can be on Windows, it works same way.
+
+REPLICATION SCHEMES
+
+	DNS Server loads DNS_HOSTS, MX and ALIAS records and serves them. If DHCP Service is also
+	enabled, thoes records are also served by DNS Server.
+
+	How about this server going down. A secondary server is also put in service, which just backs
+	up data from Primary Server and serves it if primary server is down. Secondary server should
+	have exact same data and hence it pulls the whole data (all records of a Zone) from Primary
+	Server and also needs to refresh its data from Primary Server, as data on Primary Server may
+	change.
+
+	Dual Server can be used as Primary Server and also Secondary Server or a Third Party Server
+	can also be used as Primary or Secondary Server with Dual Server. Dual Server supports following
+	arrangements:-
+
+1. Dual Server with only DNS Service as Primary and Secondary Server.
+
+	This is the simple most arragement. When primary server is started it reads ALIASes, MX and
+	DNS_HOSTS records from it's ini file. When Secondary Server starts, it does not read these
+	entries from its' ini file, but pulls the full zone from Primary Server. Secondary Server keeps
+	checking the Serial from Primary Server, using UDP SOA query, if Serial advances, full zone
+	is transfered from Primary.
+
+	If any changes are made in ini file of Primay Server, it needs to be restarted and thereafter
+	Secondary Server would pull automatically all RRs from Primary, after refresh time.
+	
+	Dual Servers do not support NOTIFY.
+
+2. Dual Server with DNS and DHCP as Primary Server and Dual Server with only DNS as Secondary Server
+
+	This is the conventional arrangement.
+
+	When Primary Server starts, it reads DNS_HOSTS, MX, CNAMEs from ini file. When Secondary
+	server starts/restarts, it pulls DNS_HOSTS, MX, Alises and DHCP added RRs from Primary Server.
+	Secondary Server keeps updating its database through convensional refresh after refresh time.
+
+	When any DHCP lease is added or released at Primary Server, its serial number
+	advances and secondary DNS Server gets this entry when refresh takes place. Secondary
+	server keeps checking the serial of primary and if it advances, full zone is refreshed at
+	secondary server. Similarly changing the Static Entries at Primary Server (followed by
+	restart) also advances its serial and Secondary refreshes automatically.
+	
+2. Dual Server with DNS and DHCP as Primary Server and Dual Server with DNS and DHCP as Secondary Server
+
+	THIS IS THE RECOMMENDED ARRANGEMENT as it provides both DNS and DHCP replicated operation.
+
+	When Primary Server starts, it reads DNS_HOSTS, MX, CNAMEs from ini file. When Secondary
+	server starts/restarts, it pulls DNS_HOSTS, MX, Alises and DHCP added RRs from Primary Server.
+	Secondary Server keeps updating its database through convensional refresh after refresh time.
+	
+	DHCP Leases as and when issued by either Primary Server or Secondary Server are immidiately
+	replicated on other server by special Inform messages. If any server fails, other can simply 
+	refresh the lease without a break.
+
+	When any DHCP lease is added or released at Primary Server, its serial number advances and
+	secondary DNS Server gets this entry when refresh takes place. Secondary server keeps checking
+	the serial of primary and if it advances, full zone is refreshed at secondary server. When a new 
+	Lease is added in Secondary DHCP Server, it sends DHCP replication to Primary Server and DHPC HOST
+	still added in the zone of Primary Server and the Serial of Primary Server advances and record
+	is replicated in Secondary Server through AXFR
+
+3.  Dual Server with DNS and DHCP as Primary Server and third party DNS server as Secondary Server.
+
+	This arragement too works similar to 2. Dual Server supports only full zone tranfer.
+	Dual Server do not send NOTIFY message and do not send increment zone trasfer.
+	The secondary server needs to pull the full zone after refresh time.
+	
+	The advantage is that all DHCP alloted RRs are also transfered with zone transfer to secondary
+	server.
+
+4.  Dual Server as secondary server and third party server as primary server.
+
+	This arragement too works similar to 2. However third party primary DNS Server might update its
+	database through DHCP Dynamic update or some other mechanism. Secondary Dual Server would get
+	updated full zone after refresh time.
+
+5.	Dual Server with only DNS (or third party DNS) as Primary and Dual Server with DHCP as Seocondary.
+
+	This arrangement works too but there is no DNS backup server which is required as per RFC.
+	
+	
+Future Releases of Dual Server may support NOTIFY and Increment Zone Transfers.
+	
