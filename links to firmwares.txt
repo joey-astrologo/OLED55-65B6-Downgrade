@@ -1,0 +1,13 @@
+
+OLED*5B6 firmwares
+[4.31.10]
+[Denmark]
+http://www.lg.com/dk/lgecs.downloadFile.ldwf?DOC_ID=20150236012779&what=MANUAL&fromSystem=LG.COM&fileId=qN6g1DrI2Zr5OSVYNltpg&ORIGINAL_NAME_b1_a1=Software_File%28Version_04.31.10%29.zip
+
+[4.31.20]
+[North America]
+http://www.lg.com/us/lgecs.downloadFile.ldwf?DOC_ID=20150370271976&amp;what=MANUAL&amp;fromSystem=LG.COM&amp;fileId=PdgPUkOU4JT2k4OFoLQOtw&amp;ORIGINAL_NAME_b1_a1=Software_File%28Version_04.31.20%29.zip
+
+[4.31.25]
+[DE]
+yadi.sk/d/luKhgpy63JKEfY
