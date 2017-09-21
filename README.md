@@ -22,7 +22,7 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
    Gateway   : 192.168.50.1
    DNS SERVER: 192.168.50.??? where ??? is the ip address you entered in step 1
    ```
-3. Download the firmware 
+3. Download the firmware (4.31.20)
 
    * [Mirror 1](https://mega.nz/#!b0g3HaCK!1SAhfYg5n5Gpuuap1lNNS01w2wKexFNQ_ps97mTFZqs)
    * [Mirror 2](https://drive.google.com/open?id=0ByCYX-u487QXY1Q0SHN0ekU3SlE)
