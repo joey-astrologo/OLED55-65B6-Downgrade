@@ -29,7 +29,7 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
 
    Extract and copy the firmware to "C:\LgDTVUpDater\htdocs"
 
-**The following steps are optional if you just want to downgrade to the included 4.31.20 firmware with a North American B6.**
+** Steps 4 and 5 are optional if you just want to downgrade to the included 4.31.20 firmware with a North American B6.**
    
 4. Optional(already done) 
    We need to create the reponse file to the tv's firmware upgrade request.
