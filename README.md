@@ -23,8 +23,10 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
    DNS SERVER: 192.168.50.??? where ??? is the ip address you entered in step 1
    ```
 3. Download the firmware 
-   [Mirror 1](https://mega.nz/#!b0g3HaCK!1SAhfYg5n5Gpuuap1lNNS01w2wKexFNQ_ps97mTFZqs)
-   
+
+   * [Mirror 1](https://mega.nz/#!b0g3HaCK!1SAhfYg5n5Gpuuap1lNNS01w2wKexFNQ_ps97mTFZqs)
+   * [Mirror 2](https://drive.google.com/open?id=0ByCYX-u487QXY1Q0SHN0ekU3SlE)
+
    Extract and copy the firmware to "C:\LgDTVUpDater\htdocs"
 
 **The following steps are optional if you just want to downgrade to the included 4.31.20 firmware with a North American B6.**
