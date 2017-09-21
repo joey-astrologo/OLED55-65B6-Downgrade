@@ -62,6 +62,15 @@ The software can be used to downgrade to any firmware you may have, but only 4.3
 
 13. If all is well, it should start downgrading!
 
+14. Optional - Block the update servers so the tv can't auto update
+
+    Router software is different between manufacturers, so I can't put instructions for everyone, but these are the dns addresses that should be blocked by the router firewall
+    ```
+    192.168.50.54 snu.lge.com
+    192.168.50.54 lgtvonline.lge.com
+    192.168.50.54 su.lge.com 
+    ```
+
 I recommend resetting the TV to Initial Settings after downgrading, to be sure it works as intended.
 
 # Credits
